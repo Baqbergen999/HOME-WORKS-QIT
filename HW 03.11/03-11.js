@@ -41,6 +41,3 @@ else {
     console.log("Жалған");
     
 }
-
-
-
