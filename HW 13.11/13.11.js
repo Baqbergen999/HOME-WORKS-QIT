@@ -51,7 +51,7 @@ alert("Cіз " + number + " ұпай жинадыңыз!");
 
 // Ex3
 
-console.log("Ex 3");
+console.log("Ex3");
 
 
 let start = Number(prompt("Санның басталатын санын енгізіңіз:"));
