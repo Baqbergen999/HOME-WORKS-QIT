@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
+        input, button { margin: 10px; padding: 10px; font-size: 16px; }
+        .error { color: red; }
+    </style>
+
+
+
+    <h1>Ауа райын тексеру</h1>
+    <input id="city" placeholder="Қаланы енгізіңіз">
+    <button onclick="getWeather()">Тексеру</button>
+    <div id="result"></div>
+
+    <script>
+      async function getWeather() {
+        const city = document.getElementById("city").value;
+        const result = document.getElementById("result");
+
+        if (!city) {
+          result.innerHTML = '<p class="error">Қала атауын енгізіңіз!</p>';
+          return;
+        }
+
+        const apiKey = "fb2cff02b71168e9f0c68fd3f83d168a";
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=kk`;
+
+        try {
+          const response = await fetch(url);
+          const data = await response.json();
+
+          if (data && data.name) {
+            result.innerHTML = `
+                <p><b>${data.name}</b></p>
+                <p>Температура: ${data.main.temp}°C</p>
+                <p>Ауа райы: ${data.weather[0].description}</p>
+            `;
+          } else {
+            result.innerHTML = '<p class="error">Қала табылмады!</p>';
+          }
+        } catch (error) {
+          result.innerHTML =
+            '<p class="error">Қате! Байланысты тексеріңіз.</p>';
+        }
+      }
+    </script>
+  </body>
+</html>
