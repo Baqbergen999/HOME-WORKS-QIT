@@ -1,0 +1,111 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #004cff, #2d3d6b, #001643); /* Ғарыштық градиент */
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.quiz-container {
+    width: 80%;
+    max-width: 700px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(15px);
+}
+
+.quiz-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.quiz-header h1 {
+    font-size: 3rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.quiz-content {
+    text-align: center;
+}
+
+.question {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.choices {
+    list-style: none;
+    padding: 0;
+}
+
+.choices li {
+    margin: 12px 0;
+}
+
+.choice-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2rem;
+    background-color: #663399; /* Күлгін түс */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.choice-btn:hover {
+    background-color: #8a2be2; /* Ашық күлгін */
+    transform: scale(1.05);
+}
+
+.choice-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.5);
+}
+
+.skip-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2rem;
+    background-color: #ff6347; /* Қызыл түс */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.skip-btn:hover {
+    background-color: #ff4500; /* Күшті қызыл */
+    transform: scale(1.05);
+}
+
+.progress-bar {
+    margin-top: 20px;
+    height: 20px;
+    background-color: #333;
+    border-radius: 10px;
+}
+
+.progress-bar div {
+    height: 100%;
+    width: 60%;
+    background-color: #8a2be2; /* Ашық күлгін прогресс бары */
+}
