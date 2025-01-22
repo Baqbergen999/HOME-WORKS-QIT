@@ -19,6 +19,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(15px);
+    text-align: center;
 }
 
 .quiz-header {
@@ -29,7 +30,6 @@ body {
 .quiz-header h1 {
     font-size: 3rem;
     color: #fff;
-    text-transform: uppercase;
     letter-spacing: 3px;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
@@ -96,16 +96,29 @@ body {
     background-color: #ff4500;
     transform: scale(1.05);
 }
-
-.progress-bar {
-    margin-top: 20px;
-    height: 20px;
-    background-color: #333;
-    border-radius: 10px;
+body {
+    background-image: url("https://images.pexels.com/photos/1169754/pexels-photo-1169754.jpeg");
+    background-size: cover;
 }
-
-.progress-bar div {
-    height: 100%;
-    width: 60%;
-    background-color: #8a2be2;
+.score {
+    font-size: 2rem;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+.timer {
+    font-size: 2rem;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+h1 {
+    color: white;
+}
+.start-btn {
+    text-decoration: none;
+    color: #fff;
+    background: #1c0058;
+    border: 1px solid #fff;
+    padding: 20px 40px;
+    border-radius: 10px;
+    font-size: 1.5rem;
 }

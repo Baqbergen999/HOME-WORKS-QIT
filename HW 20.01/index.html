@@ -1,29 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ultimate Quiz</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="quiz-container">
-        <div class="quiz-header">
-            <h1>Ultimate Quiz</h1>
-        </div>
-        <div class="quiz-content">
-            <div class="question">Which planet is known as the Red Planet?</div>
-            <ul class="choices">
-                <li><button class="choice-btn">A. Earth</button></li>
-                <li><button class="choice-btn">B. Jupiter</button></li>
-                <li><button class="choice-btn">C. Mars</button></li>
-                <li><button class="choice-btn">D. Venus</button></li>
-            </ul>
-            <button class="skip-btn">Skip</button>
-            <div class="progress-bar">
-                <div></div>
-            </div>
-        </div>
+      <h1>Ultimate Quiz</h1>
+      <div class="score">Ұпай: 0</div>
+      <div class="timer">Уақыт: 15</div>
+      <button class="start-btn">Бастау</button>
+      <div class="question" style="display: none">Сұрақ</div>
+      <ul class="choices" style="display: none">
+        <li><button class="choice-btn">A</button></li>
+        <li><button class="choice-btn">B</button></li>
+        <li><button class="choice-btn">C</button></li>
+        <li><button class="choice-btn">D</button></li>
+      </ul>
+      <button class="skip-btn" style="display: none">Өткізіп жіберу</button>
     </div>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
