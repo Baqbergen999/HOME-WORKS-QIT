@@ -32,6 +32,7 @@ body {
     color: #fff;
     letter-spacing: 3px;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    font-weight: bold;
 }
 
 .quiz-content {
@@ -40,7 +41,7 @@ body {
 
 .question {
     font-size: 1.6rem;
-    font-weight: 600;
+    font-weight: bold;
     margin-bottom: 20px;
     color: #fff;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
@@ -66,6 +67,7 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
 }
 
 .choice-btn:hover {
@@ -90,30 +92,40 @@ body {
     transition: background-color 0.3s ease, transform 0.3s ease;
     margin-top: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
 }
 
 .skip-btn:hover {
     background-color: #ff4500;
     transform: scale(1.05);
 }
+
 body {
     background-image: url("https://images.pexels.com/photos/1169754/pexels-photo-1169754.jpeg");
     background-size: cover;
 }
+
 .score {
     font-size: 2rem;
     color: #fff;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    font-weight: bold;
 }
+
 .timer {
     font-size: 2rem;
     color: #fff;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    font-weight: bold;
 }
+
 h1 {
     color: white;
 }
+
 .start-btn {
+    display: block;
+    margin: 0 auto;
     text-decoration: none;
     color: #fff;
     background: #1c0058;
@@ -121,4 +133,75 @@ h1 {
     padding: 20px 40px;
     border-radius: 10px;
     font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.card {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.card.correct {
+    background-color: #4caf50;
+    border: 2px solid #4caf50;
+}
+
+.card.incorrect {
+    background-color: #f44336;
+    border: 2px solid #f44336;
+}
+
+.end-game-card {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.end-game-card h2 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.end-game-card p {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.end-game-card button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background-color: #663399;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+}
+
+.end-game-card button:hover {
+    background-color: #8a2be2;
+    transform: scale(1.05);
 }
