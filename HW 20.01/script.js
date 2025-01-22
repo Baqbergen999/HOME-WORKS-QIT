@@ -9,52 +9,33 @@ const incorrectCard = document.querySelector(".card.incorrect");
 const endGameCard = document.querySelector(".end-game-card");
 const restartButton = document.querySelector(".restart-btn");
 
+const apiUrl = 'https://67873274c4a42c916105d2fe.mockapi.io/api/onlineduken/questions';
 
-
-
-
-
-
-const questions = [
-  {
-    question: "Күн жүйесіндегі ең үлкен планетаның массасы Жердің массасынан қанша есе үлкен?",
-    answers: ["317 есе", "95 есе", "318 есе", "100 есе"],
-    correct: "317 есе",
-  },
-  {
-    question: "Күн жүйесіндегі ең кіші планетаның диаметрі қанша километр?",
-    answers: ["3,474 км", "6,779 км", "4,879 км", "8,890"],
-    correct: "4,879 км",
-  },
-  {
-    question: "Күн жүйесіндегі ең ыстық планета қайсы және оның орташа температурасы қанша градус Цельсий?",
-    answers: ["Шолпан, 462°C", "Меркурий, 427°C", "Жер, 15°C", "Марс, -63°C"],
-    correct: "Шолпан, 462°C",
-  },
-  {
-    question: "Күн жүйесіндегі ең ұзақ күн қай планетада және оның ұзақтығы қанша сағат?",
-    answers: ["Марс, 24.6 сағат", "Шолпан, 5,832 сағат", "Юпитер, 9.9 сағат", "Сатурн, 10.7 сағат"],
-    correct: "Шолпан, 5,832 сағат",
-  },
-  {
-    question: "Күн жүйесіндегі ең үлкен тау қай планетада және оның биіктігі қанша километр?",
-    answers: ["Жер, 8.8 км", "Шолпан, 11 км", "Марс, 21.9 км",  "Юпитер, 25 км"],
-    correct: "Марс, 21.9 км",
-  },
-];
-
+let questions = [];
 let currentQuestionIndex = 0;
 let score = 0;
 let timeLeft = 15;
 let timerInterval;
 
+async function fetchQuestions() {
+  try {
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+    questions = data.map(item => ({
+      question: item.question,
+      answers: item.options,
+      correct: item.answer
+    }));
+  } catch (error) {
+    console.error('Error fetching questions:', error);
+  }
+}
 
+async function loadQuestion() {
+  if (questions.length === 0) {
+    await fetchQuestions();
+  }
 
-
-
-
-
-function loadQuestion() {
   const currentQuestion = questions[currentQuestionIndex];
   questionElement.textContent = currentQuestion.question;
 
@@ -67,13 +48,6 @@ function loadQuestion() {
   startTimer();
 }
 
-
-
-
-
-
-
-
 function showNotification(isCorrect) {
   const card = isCorrect ? correctCard : incorrectCard;
   card.style.display = "block";
@@ -82,11 +56,6 @@ function showNotification(isCorrect) {
     nextQuestion();
   }, 1000);
 }
-
-
-
-
-
 
 function checkAnswer(selectedAnswer) {
   const currentQuestion = questions[currentQuestionIndex];
@@ -98,12 +67,6 @@ function checkAnswer(selectedAnswer) {
   }
 }
 
-
-
-
-
-
-
 function nextQuestion() {
   clearInterval(timerInterval);
   currentQuestionIndex++;
@@ -114,18 +77,9 @@ function nextQuestion() {
   }
 }
 
-
-
-
-
-
 function updateScore() {
   scoreElement.textContent = `Ұпай: ${score}`;
 }
-
-
-
-
 
 function startTimer() {
   timeLeft = 15;
@@ -140,11 +94,6 @@ function startTimer() {
   }, 1000);
 }
 
-
-
-
-
-
 function endGame() {
   questionElement.style.display = "none";
   document.querySelector(".choices").style.display = "none";
@@ -152,11 +101,6 @@ function endGame() {
   endGameCard.style.display = "block";
   endGameCard.querySelector(".final-score").textContent = score;
 }
-
-
-
-
-
 
 restartButton.onclick = () => {
   endGameCard.style.display = "none";
@@ -167,17 +111,7 @@ restartButton.onclick = () => {
   clearInterval(timerInterval);
 };
 
-
-
-
-
-
 skipButton.onclick = nextQuestion;
-
-
-
-
-
 
 startButton.onclick = () => {
   startButton.style.display = "none";
