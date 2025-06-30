@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    gap: 50px;
+}
+
+form {
+    background-color: #ffffffcc;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid #ffffff66;
+    min-height: 550px;
+}
+
+form h1 {
+    margin: 0 auto 10px auto;
+    font-size: 32px;
+    color: #333;
+    text-shadow: 1px 1px 0 #fff;
+}
+
+label {
+    font-weight: 600;
+    color: #444;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: 0.3s ease;
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: #ff9966;
+    box-shadow: 0 0 10px #ff9966aa;
+}
+
+button {
+    margin-top: 10px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #ff9966, #ff5e62);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 94, 98, 0.4);
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(255, 94, 98, 0.6);
+}
+
+#userList {
+    background-color: #ffffffcc;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid #ffffff66;
+    min-height: 580px;
+}

@@ -1,0 +1,17 @@
+body {
+    background-color: #f0f0f0;
+}
+
+h1 {
+    color: darkblue;
+    font-size: 36px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

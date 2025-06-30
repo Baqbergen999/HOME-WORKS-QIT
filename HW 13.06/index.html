@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
+</head>
+<body>
+    <form action="">
+        <h1>Registration</h1>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+
+        <label for="height">Height:</label>
+        <input type="number" id="height" name="height" required>
+
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="country" required>
+
+        <label for="gender">Gender:</label>
+        <select name="gender" id="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+
+        <button type="submit" id="submit-btn">Submit</button>
+    </form>
+
+    <ul id="userList" style="color: black;"></ul>
+
+    <script>
+        const form = document.querySelector('form');
+        const userList = document.getElementById('userList');
+        const ul = document.getElementById('userList');
+        const submitBtn = document.getElementById('submit-btn');
+
+        submitBtn.addEventListener('click', function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const age = document.getElementById('age').value;
+            const height = document.getElementById('height').value;
+            const country = document.getElementById('country').value;
+
+            class User {
+                constructor(username, age, height, country) {
+                    this.username = username;
+                    this.age = age;
+                    this.height = height;
+                    this.country = country;
+                }
+            }
+            const user = new User(username, age, height, country);
+            const li = document.createElement('li');
+            li.textContent = `Username: ${user.username}, Age: ${user.age}, Height: ${user.height}, Country: ${user.country}`;
+            ul.appendChild(li);
+
+        });
+    </script>
+</body>
+</html>
